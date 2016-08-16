@@ -4,5 +4,6 @@
         <attr name="iconSize" format="dimension" />
         <attr name="iconPadding" format="dimension" />
         <attr name="iconCenterAligned" format="boolean"/>
+        <attr name="roundedCorner" format="boolean"/>
     </declare-styleable>
 </resources>

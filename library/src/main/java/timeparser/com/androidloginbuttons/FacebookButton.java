@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.Button;
 
@@ -21,13 +22,20 @@ public class FacebookButton extends Button {
     private int mIconPadding;
     private int mIconSize;
     private boolean mIconCenterAligned;
+    private boolean mRoundedCorner;
 
     public FacebookButton(Context context, AttributeSet attrs) {
         super(context,attrs);
         init(context, attrs);
         int color = getResources().getColor(R.color.facebook);
-        setBackgroundColor(color);
-        //setIncludeFontPadding(true);
+        if(mRoundedCorner){
+            setBackgroundResource(R.drawable.round_corner);
+            GradientDrawable drawable = (GradientDrawable)getBackground();
+            drawable.setColor(color);
+        }
+        else
+            setBackgroundColor(color);
+
         setPadding((int)Utils.convertDpToPixel(30,context),0,(int)Utils.convertDpToPixel(30,context),0);
 
         setTextColor(Color.WHITE);
@@ -72,6 +80,8 @@ public class FacebookButton extends Button {
         mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.fb_logo));
         mIconSize = (int)Utils.convertDpToPixel(20,context);
         mIconCenterAligned = true;
+        mRoundedCorner = false;
+
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
@@ -86,6 +96,9 @@ public class FacebookButton extends Button {
             }
             if(attr == R.styleable.IconButton_iconSize) {
                 mIconSize = array.getDimensionPixelSize(attr, (int) Utils.convertDpToPixel(20, context));
+            }
+            if(attr == R.styleable.IconButton_roundedCorner){
+                mRoundedCorner = array.getBoolean(attr,false);
             }
         }
 

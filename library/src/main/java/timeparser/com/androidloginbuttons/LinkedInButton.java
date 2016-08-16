@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.Button;
 
@@ -20,12 +21,21 @@ public class LinkedInButton extends Button {
     private Rect mSrcRect;
     private int mIconPadding;
     private int mIconSize;
+    private boolean mIconCenterAligned;
+    private boolean mRoundedCorner;
 
     public LinkedInButton(Context context, AttributeSet attrs) {
         super(context,attrs);
         init(context, attrs);
         int color = getResources().getColor(R.color.linkedin);
-        setBackgroundColor(color);
+        if(mRoundedCorner){
+            setBackgroundResource(R.drawable.round_corner);
+            GradientDrawable drawable = (GradientDrawable)getBackground();
+            drawable.setColor(color);
+        }
+        else
+            setBackgroundColor(color);
+
         setPadding((int)Utils.convertDpToPixel(30,context),0,(int)Utils.convertDpToPixel(30,context),0);
 
         setTextColor(Color.WHITE);
@@ -54,6 +64,9 @@ public class LinkedInButton extends Button {
             int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
             int top = getHeight()/2 - mIconSize/2;
 
+            if(!mIconCenterAligned)
+                left = 0;
+
             Rect destRect = new Rect(left, top, left + mIconSize, top + mIconSize);
             canvas.drawBitmap(mIcon, mSrcRect, destRect, mPaint);
         }
@@ -65,6 +78,9 @@ public class LinkedInButton extends Button {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.IconButton);
         mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.linkedin_logo));
         mIconSize = (int)Utils.convertDpToPixel(20,context);
+        mIconCenterAligned = true;
+        mRoundedCorner = false;
+
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
@@ -74,7 +90,15 @@ public class LinkedInButton extends Button {
             if(attr == R.styleable.IconButton_iconPadding){
                 mIconPadding = array.getDimensionPixelSize(attr, (int)Utils.convertDpToPixel(20,context));
             }
-            mIconSize = array.getDimensionPixelSize(attr, (int)Utils.convertDpToPixel(20,context));
+            if(attr == R.styleable.IconButton_iconCenterAligned){
+                mIconCenterAligned = array.getBoolean(attr,true);
+            }
+            if(attr == R.styleable.IconButton_iconSize) {
+                mIconSize = array.getDimensionPixelSize(attr, (int) Utils.convertDpToPixel(20, context));
+            }
+            if(attr == R.styleable.IconButton_roundedCorner){
+                mRoundedCorner = array.getBoolean(attr,false);
+            }
         }
 
         array.recycle();

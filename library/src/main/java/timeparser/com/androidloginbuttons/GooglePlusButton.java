@@ -1,15 +1,13 @@
 package timeparser.com.androidloginbuttons;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.support.v7.widget.AppCompatButton;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.Button;
 
@@ -24,15 +22,25 @@ public class GooglePlusButton extends Button {
     private int mIconPadding;
     private int mIconSize;
     private boolean mIconCenterAligned;
+    private boolean mRoundedCorner;
 
     public GooglePlusButton(Context context, AttributeSet attrs) {
         super(context,attrs);
         init(context, attrs);
         int color = getResources().getColor(R.color.google);
-        setBackgroundColor(color);
+        if(mRoundedCorner){
+            setBackgroundResource(R.drawable.round_corner);
+            GradientDrawable drawable = (GradientDrawable)getBackground();
+            drawable.setColor(color);
+        }
+        else
+            setBackgroundColor(color);
+
         setPadding((int)Utils.convertDpToPixel(30,context),0,(int)Utils.convertDpToPixel(30,context),0);
 
         setTextColor(Color.WHITE);
+
+
     }
 
     public GooglePlusButton(Context context, AttributeSet attrs, int defStyle) {
@@ -73,6 +81,7 @@ public class GooglePlusButton extends Button {
         mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.google_logo));
         mIconSize = (int)Utils.convertDpToPixel(20,context);
         mIconCenterAligned = true;
+        mRoundedCorner = false;
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
@@ -87,6 +96,9 @@ public class GooglePlusButton extends Button {
             }
             if(attr == R.styleable.IconButton_iconSize) {
                 mIconSize = array.getDimensionPixelSize(attr, (int) Utils.convertDpToPixel(20, context));
+            }
+            if(attr == R.styleable.IconButton_roundedCorner){
+                mRoundedCorner = array.getBoolean(attr,false);
             }
         }
 
