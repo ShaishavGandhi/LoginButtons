@@ -21,6 +21,7 @@ public class BaseButton extends Button {
     private Rect mSrcRect;
     private int mIconPadding;
     private int mIconSize;
+    private int mRoundedCornerRadius;
     private boolean mIconCenterAligned;
     private boolean mRoundedCorner;
 
@@ -48,8 +49,10 @@ public class BaseButton extends Button {
     private void setStyle(int color, Context context){
         if(mRoundedCorner){
             setBackgroundResource(R.drawable.round_corner);
-            GradientDrawable drawable = (GradientDrawable)getBackground();
+            GradientDrawable drawable = (GradientDrawable)getBackground().mutate();
             drawable.setColor(getResources().getColor(color));
+            drawable.setCornerRadius(mRoundedCornerRadius);
+            drawable.invalidateSelf();
         }
         else
             setBackgroundColor(getResources().getColor(color));
@@ -89,6 +92,8 @@ public class BaseButton extends Button {
         mIconSize = (int)Utils.convertDpToPixel(20,context);
         mIconCenterAligned = true;
         mRoundedCorner = false;
+        mRoundedCornerRadius = (int)Utils.convertDpToPixel(40,context);
+
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
@@ -106,6 +111,9 @@ public class BaseButton extends Button {
             }
             if(attr == R.styleable.IconButton_roundedCorner){
                 mRoundedCorner = array.getBoolean(attr,false);
+            }
+            if(attr == R.styleable.IconButton_roundedCornerRadius){
+                mRoundedCornerRadius = array.getDimensionPixelSize(attr,(int)Utils.convertDpToPixel(40,context));
             }
         }
 
