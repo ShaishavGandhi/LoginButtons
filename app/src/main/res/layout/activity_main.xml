@@ -99,4 +99,39 @@
         </timeparser.com.androidloginbuttons.TwitterButton>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <timeparser.com.androidloginbuttons.GooglePlusCircularButton
+            android:layout_width="80dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:iconSize="30dp"
+            android:layout_height="80dp" />
+
+        <timeparser.com.androidloginbuttons.FacebookCircularButton
+            android:layout_width="80dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:iconSize="30dp"
+            android:layout_height="80dp" />
+
+        <timeparser.com.androidloginbuttons.TwitterCircularButton
+            android:layout_width="80dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:iconSize="30dp"
+            android:layout_height="80dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/google_shape"/>
 </LinearLayout>

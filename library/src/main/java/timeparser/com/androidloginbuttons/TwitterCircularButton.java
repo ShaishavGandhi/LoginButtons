@@ -1,19 +1,19 @@
 package timeparser.com.androidloginbuttons;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.support.design.widget.FloatingActionButton;
 import android.util.AttributeSet;
-import android.widget.Button;
 
 /**
  * Created by Shaishav on 8/15/2016.
  */
-public class FacebookButton extends Button {
+public class TwitterCircularButton extends FloatingActionButton {
 
     private Bitmap mIcon;
     private Paint mPaint;
@@ -21,24 +21,18 @@ public class FacebookButton extends Button {
     private int mIconPadding;
     private int mIconSize;
 
-    public FacebookButton(Context context, AttributeSet attrs) {
-        super(context,attrs);
-        init(context, attrs);
-        int color = getResources().getColor(R.color.facebook);
-        setBackgroundColor(color);
-        //setIncludeFontPadding(true);
-        setPadding((int)Utils.convertDpToPixel(30,context),0,(int)Utils.convertDpToPixel(30,context),0);
-
-        setTextColor(Color.WHITE);
-    }
-
-    public FacebookButton(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs,defStyle);
-        init(context, attrs);
-    }
-
-    public FacebookButton(Context context) {
+    public TwitterCircularButton(Context context) {
         super(context);
+    }
+
+    public TwitterCircularButton(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context, attrs);
+        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.twitter))));
+    }
+
+    public TwitterCircularButton(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -48,11 +42,10 @@ public class FacebookButton extends Button {
         canvas.save();
         canvas.translate(shift, 0);
 
-
         super.onDraw(canvas);
 
         if (mIcon != null) {
-            float textWidth = getPaint().measureText((String)getText());
+            float textWidth = 0;
             int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
             int top = getHeight()/2 - mIconSize/2;
 
@@ -65,7 +58,7 @@ public class FacebookButton extends Button {
 
     private void init(Context context, AttributeSet attrs) {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.IconButton);
-        mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.fb_logo));
+        mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.twitter_logo));
         mIconSize = (int)Utils.convertDpToPixel(20,context);
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
