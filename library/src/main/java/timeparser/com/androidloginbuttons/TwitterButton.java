@@ -22,6 +22,7 @@ public class TwitterButton extends Button {
     private Rect mSrcRect;
     private int mIconPadding;
     private int mIconSize;
+    private boolean mIconCenterAligned;
 
     public TwitterButton(Context context, AttributeSet attrs) {
         super(context,attrs);
@@ -57,6 +58,9 @@ public class TwitterButton extends Button {
             int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
             int top = getHeight()/2 - mIconSize/2;
 
+            if(!mIconCenterAligned)
+                left = 0;
+
             Rect destRect = new Rect(left, top, left + mIconSize, top + mIconSize);
             canvas.drawBitmap(mIcon, mSrcRect, destRect, mPaint);
         }
@@ -68,6 +72,7 @@ public class TwitterButton extends Button {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.IconButton);
         mIcon = Utils.drawableToBitmap(getResources().getDrawable(R.drawable.twitter_logo));
         mIconSize = (int)Utils.convertDpToPixel(20,context);
+        mIconCenterAligned = true;
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
@@ -77,7 +82,12 @@ public class TwitterButton extends Button {
             if(attr == R.styleable.IconButton_iconPadding){
                 mIconPadding = array.getDimensionPixelSize(attr, (int)Utils.convertDpToPixel(20,context));
             }
-            mIconSize = array.getDimensionPixelSize(attr, (int)Utils.convertDpToPixel(20,context));
+            if(attr == R.styleable.IconButton_iconCenterAligned){
+                mIconCenterAligned = array.getBoolean(attr,true);
+            }
+            if(attr == R.styleable.IconButton_iconSize) {
+                mIconSize = array.getDimensionPixelSize(attr, (int) Utils.convertDpToPixel(20, context));
+            }
         }
 
         array.recycle();

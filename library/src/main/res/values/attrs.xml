@@ -3,5 +3,6 @@
     <declare-styleable name="IconButton">
         <attr name="iconSize" format="dimension" />
         <attr name="iconPadding" format="dimension" />
+        <attr name="iconCenterAligned" format="boolean"/>
     </declare-styleable>
 </resources>
