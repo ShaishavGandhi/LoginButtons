@@ -28,11 +28,15 @@ public class TwitterCircularButton extends FloatingActionButton {
     public TwitterCircularButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
-        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.twitter))));
+        setStyle(R.color.twitter);
     }
 
     public TwitterCircularButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    private void setStyle(int color){
+        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(color))));
     }
 
     @Override

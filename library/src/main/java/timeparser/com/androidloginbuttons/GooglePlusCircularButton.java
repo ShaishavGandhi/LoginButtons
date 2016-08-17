@@ -27,11 +27,15 @@ public class GooglePlusCircularButton extends FloatingActionButton{
     public GooglePlusCircularButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
-        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.google))));
+        setStyle(R.color.google);
     }
 
     public GooglePlusCircularButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    private void setStyle(int color){
+        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(color))));
     }
 
     @Override

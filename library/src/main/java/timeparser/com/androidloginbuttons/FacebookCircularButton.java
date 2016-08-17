@@ -28,11 +28,16 @@ public class FacebookCircularButton extends FloatingActionButton {
     public FacebookCircularButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
-        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(R.color.facebook))));
+        setStyle(R.color.facebook);
+
     }
 
     public FacebookCircularButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    private void setStyle(int color){
+        setBackgroundTintList(ColorStateList.valueOf((getResources().getColor(color))));
     }
 
     @Override
