@@ -24,6 +24,7 @@ public class BaseButton extends Button {
     private int mRoundedCornerRadius;
     private boolean mIconCenterAligned;
     private boolean mRoundedCorner;
+    private boolean mTransparentBackground;
 
     public BaseButton(Context context) {
         super(context);
@@ -47,19 +48,27 @@ public class BaseButton extends Button {
     }
 
     private void setStyle(int color, Context context){
-        if(mRoundedCorner){
-            setBackgroundResource(R.drawable.round_corner);
-            GradientDrawable drawable = (GradientDrawable)getBackground().mutate();
-            drawable.setColor(getResources().getColor(color));
+
+        setTextColor(Color.WHITE);
+
+        setBackgroundResource(R.drawable.round_corner);
+        GradientDrawable drawable = (GradientDrawable)getBackground().mutate();
+        drawable.setColor(getResources().getColor(color));
+        drawable.setCornerRadius(0);
+
+        if(mRoundedCorner)
             drawable.setCornerRadius(mRoundedCornerRadius);
-            drawable.invalidateSelf();
+
+        if(mTransparentBackground){
+            drawable.setColor(Color.TRANSPARENT);
+            drawable.setStroke(4,getResources().getColor(color));
         }
-        else
-            setBackgroundColor(getResources().getColor(color));
+
+        drawable.invalidateSelf();
 
         setPadding((int)Utils.convertDpToPixel(30,context),0,(int)Utils.convertDpToPixel(30,context),0);
 
-        setTextColor(Color.WHITE);
+
     }
 
     @Override
@@ -92,6 +101,7 @@ public class BaseButton extends Button {
         mIconSize = (int)Utils.convertDpToPixel(20,context);
         mIconCenterAligned = true;
         mRoundedCorner = false;
+        mTransparentBackground = false;
         mRoundedCornerRadius = (int)Utils.convertDpToPixel(40,context);
 
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
@@ -114,6 +124,9 @@ public class BaseButton extends Button {
             }
             if(attr == R.styleable.IconButton_roundedCornerRadius){
                 mRoundedCornerRadius = array.getDimensionPixelSize(attr,(int)Utils.convertDpToPixel(40,context));
+            }
+            if(attr == R.styleable.IconButton_transparentBackground){
+                mTransparentBackground = array.getBoolean(attr,false);
             }
         }
 

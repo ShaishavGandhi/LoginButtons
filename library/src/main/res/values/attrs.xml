@@ -5,6 +5,7 @@
         <attr name="iconPadding" format="dimension" />
         <attr name="iconCenterAligned" format="boolean"/>
         <attr name="roundedCorner" format="boolean"/>
+        <attr name="transparentBackground" format="boolean"/>
         <attr name="roundedCornerRadius" format="dimension"/>
     </declare-styleable>
 </resources>
