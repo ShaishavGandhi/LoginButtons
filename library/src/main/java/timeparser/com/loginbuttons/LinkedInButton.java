@@ -1,4 +1,4 @@
-package timeparser.com.androidloginbuttons;
+package timeparser.com.loginbuttons;
 
 import android.content.Context;
 import android.util.AttributeSet;

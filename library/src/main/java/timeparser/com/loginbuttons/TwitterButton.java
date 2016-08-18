@@ -1,15 +1,7 @@
-package timeparser.com.androidloginbuttons;
+package timeparser.com.loginbuttons;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
-import android.widget.Button;
 
 /**
  * Created by Shaishav on 8/15/2016.

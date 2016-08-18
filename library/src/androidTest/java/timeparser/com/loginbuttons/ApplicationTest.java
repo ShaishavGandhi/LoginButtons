@@ -1,4 +1,4 @@
-package timeparser.com.androidloginbuttons;
+package timeparser.com.loginbuttons;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

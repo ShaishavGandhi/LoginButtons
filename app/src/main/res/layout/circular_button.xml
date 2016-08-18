@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:paddingBottom="10dp"
+    >
+
+    <timeparser.com.loginbuttons.GooglePlusButton
+        android:layout_width="75dp"
+        android:layout_weight="1"
+        app:roundedCorner="true"
+        android:id="@+id/google"
+        android:layout_margin="5dp"
+        android:textAlignment="center"
+        app:iconSize="30dp"
+        app:roundedCornerRadius="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="75dp"
+        >
+
+    </timeparser.com.loginbuttons.GooglePlusButton>
+
+    <timeparser.com.loginbuttons.FacebookButton
+        android:layout_width="75dp"
+        android:layout_margin="5dp"
+        android:id="@+id/facebook"
+        android:layout_weight="1"
+        app:roundedCorner="true"
+
+        app:iconSize="30dp"
+        app:roundedCornerRadius="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/google"
+        android:layout_toRightOf="@+id/google"
+        android:layout_height="75dp"
+        >
+
+    </timeparser.com.loginbuttons.FacebookButton>
+
+    <timeparser.com.loginbuttons.TwitterButton
+        android:id="@+id/twitter"
+        android:layout_width="75dp"
+        app:roundedCorner="true"
+        android:layout_margin="5dp"
+        app:iconSize="30dp"
+        app:roundedCornerRadius="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="75dp"
+        android:layout_toEndOf="@+id/facebook"
+        android:layout_toRightOf="@+id/facebook"
+        />
+
+    <timeparser.com.loginbuttons.LinkedInButton
+        android:id="@+id/linkedin"
+        android:layout_width="75dp"
+        app:roundedCorner="true"
+        android:layout_margin="5dp"
+        app:roundedCornerRadius="75dp"
+        app:iconSize="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="75dp"
+        android:layout_toEndOf="@+id/twitter"
+        android:layout_toRightOf="@+id/twitter"/>
+
+</RelativeLayout>

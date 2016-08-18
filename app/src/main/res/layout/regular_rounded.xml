@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <timeparser.com.loginbuttons.GooglePlusButton
+        android:id="@+id/google"
+        android:layout_above="@+id/facebook"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        app:roundedCorner="true"
+        app:iconCenterAligned="false"
+        app:iconSize="30dp"
+        android:layout_margin="5dp"
+        android:text="Sign in with Google"
+        android:layout_height="wrap_content"
+        >
+
+    </timeparser.com.loginbuttons.GooglePlusButton>
+
+    <timeparser.com.loginbuttons.FacebookButton
+        android:id="@+id/facebook"
+        android:layout_above="@+id/twitter"
+        app:roundedCorner="true"
+        android:layout_width="match_parent"
+        android:text="Sign in with Facebook"
+        app:iconSize="30dp"
+        app:iconCenterAligned="false"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        >
+
+    </timeparser.com.loginbuttons.FacebookButton>
+
+    <timeparser.com.loginbuttons.TwitterButton
+        android:layout_width="match_parent"
+        android:id="@+id/twitter"
+        android:layout_above="@+id/linkedin"
+        app:roundedCorner="true"
+        app:iconCenterAligned="false"
+        app:iconSize="30dp"
+        android:layout_margin="5dp"
+        android:text="Sign in with Twitter"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp">
+
+    </timeparser.com.loginbuttons.TwitterButton>
+
+    <timeparser.com.loginbuttons.LinkedInButton
+        android:id="@+id/linkedin"
+        app:roundedCorner="true"
+        android:layout_width="match_parent"
+        app:iconSize="30dp"
+        app:iconCenterAligned="false"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:text="Sign in with LinkedIn"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp">
+
+    </timeparser.com.loginbuttons.LinkedInButton>
+
+</RelativeLayout>

@@ -1,5 +1,29 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'login-buttons'
+
+    publishedGroupId = 'com.shaishav.login-buttons'
+    libraryName = 'login-buttons'
+    artifact = 'login-buttons'
+
+    libraryDescription = 'UI Library for beautiful login buttons'
+
+    siteUrl = 'https://github.com/shaishavgandhi05/AndroidLoginButtons'
+    gitUrl = 'https://github.com/shaishavgandhi05/AndroidLoginButtons.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'shaishgandhi'
+    developerName = 'Shaishav Gandhi'
+    developerEmail = 'shaishgandhi@gmail.com'
+
+    licenseName = 'MIT'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ['MIT']
+}
+
 buildscript {
     repositories {
         mavenCentral()
@@ -8,6 +32,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:2.1.2'
     }
 }
+
 
 android {
     compileSdkVersion 24
@@ -21,6 +46,7 @@ android {
     }
     repositories {
         maven { url 'http://repo1.maven.org/maven2' }
+        jcenter()
     }
     buildTypes {
         release {
@@ -35,3 +61,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
