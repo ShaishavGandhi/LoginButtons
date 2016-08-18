@@ -4,17 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#3C3C3B"
+    android:padding="8dp"
     tools:context="shaishav.com.androidloginbuttonexample.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal"
         android:orientation="vertical">
     <LinearLayout
@@ -25,42 +22,34 @@
         android:orientation="horizontal">
 
     <timeparser.com.androidloginbuttons.GooglePlusButton
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         android:id="@+id/google"
         android:textAlignment="center"
         app:iconSize="30dp"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         >
 
     </timeparser.com.androidloginbuttons.GooglePlusButton>
 
     <timeparser.com.androidloginbuttons.FacebookButton
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         android:id="@+id/facebook"
         app:iconSize="30dp"
-        android:minHeight="0dp"
-        android:minWidth="0dp"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         >
 
     </timeparser.com.androidloginbuttons.FacebookButton>
 
     <timeparser.com.androidloginbuttons.TwitterButton
-        android:layout_width="100dp"
+        android:layout_width="75dp"
         app:iconSize="30dp"
-        android:layout_toRightOf="@+id/facebook"
-        android:layout_height="100dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="0dp"/>
+        android:layout_height="75dp"
+        />
 
         <timeparser.com.androidloginbuttons.LinkedInButton
-            android:layout_width="100dp"
+            android:layout_width="75dp"
             app:iconSize="30dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp"/>
+            android:layout_height="75dp" />
 
 
 
@@ -75,6 +64,7 @@
             android:layout_width="match_parent"
             android:textAlignment="center"
             app:iconSize="30dp"
+            app:transparentBackground="true"
             android:layout_margin="5dp"
             android:text="Sign in with Google"
             android:layout_height="wrap_content"
@@ -125,33 +115,49 @@
         android:gravity="center_horizontal"
         android:layout_height="wrap_content">
 
-        <timeparser.com.androidloginbuttons.GooglePlusCircularButton
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitXY"
+        <timeparser.com.androidloginbuttons.GooglePlusButton
+            android:layout_width="75dp"
+            app:roundedCornerRadius="75dp"
+            app:roundedCorner="true"
+            android:layout_margin="2dp"
+            app:transparentBackground="true"
+            android:textAlignment="center"
             app:iconSize="30dp"
-            android:layout_height="80dp" />
+            android:layout_height="75dp"
+            />
 
-        <timeparser.com.androidloginbuttons.FacebookCircularButton
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitXY"
+        <timeparser.com.androidloginbuttons.FacebookButton
+            android:layout_width="75dp"
+            app:roundedCornerRadius="75dp"
+            app:roundedCorner="true"
+            android:layout_margin="2dp"
+            app:transparentBackground="true"
+            android:textAlignment="center"
             app:iconSize="30dp"
-            android:layout_height="80dp" />
+            android:layout_height="75dp"
+            />
 
-        <timeparser.com.androidloginbuttons.TwitterCircularButton
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitXY"
+        <timeparser.com.androidloginbuttons.TwitterButton
+            android:layout_width="75dp"
+            app:roundedCornerRadius="75dp"
+            app:roundedCorner="true"
+            android:layout_margin="2dp"
+            app:transparentBackground="true"
+            android:textAlignment="center"
             app:iconSize="30dp"
-            android:layout_height="80dp" />
+            android:layout_height="75dp"
+            />
 
-        <timeparser.com.androidloginbuttons.LinkedInCircularButton
-            android:layout_width="80dp"
-            android:layout_margin="5dp"
-            android:scaleType="fitXY"
+        <timeparser.com.androidloginbuttons.LinkedInButton
+            android:layout_width="75dp"
+            app:roundedCornerRadius="75dp"
+            app:roundedCorner="true"
+            android:layout_margin="2dp"
+            app:transparentBackground="true"
+            android:textAlignment="center"
             app:iconSize="30dp"
-            android:layout_height="80dp" />
+            android:layout_height="75dp"
+            />
 
     </LinearLayout>
 
@@ -177,6 +183,7 @@
                 android:layout_width="match_parent"
                 android:text="Sign in with Facebook"
                 app:iconSize="30dp"
+                app:transparentBackground="true"
                 app:iconCenterAligned="false"
                 app:roundedCorner="true"
                 android:layout_margin="5dp"
@@ -214,5 +221,11 @@
             </timeparser.com.androidloginbuttons.LinkedInButton>
 
         </LinearLayout>
+
+        <timeparser.com.androidloginbuttons.GooglePlusSlantButton
+            android:layout_width="match_parent"
+            android:text="Sign in with Google"
+            android:background="@drawable/bg"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>
