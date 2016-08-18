@@ -1,4 +1,4 @@
-package timeparser.com.loginbuttons;
+package com.shaishavgandhi.loginbuttons;
 
 import org.junit.Test;
 
