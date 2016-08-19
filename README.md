@@ -6,7 +6,7 @@ A simple library for building beautiful login buttons
 
 ## Gradle
 
-Add this in your dependecies block
+Add this in your dependencies block
 ```
 compile 'com.shaishavgandhi:login-buttons:0.1.1'
 ```
