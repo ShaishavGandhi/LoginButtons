@@ -2,6 +2,8 @@
 
 A simple library for building beautiful login buttons
 
+![Screenshot](https://github.com/shaishavgandhi05/LoginButtons/blob/master/screenshots/screenshot.png)
+
 ## Gradle
 
 Add this in your dependecies block
