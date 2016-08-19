@@ -5,7 +5,7 @@
     android:padding="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <timeparser.com.loginbuttons.GooglePlusButton
+    <com.shaishavgandhi.loginbuttons.GooglePlusButton
         android:id="@+id/google"
         android:layout_above="@+id/facebook"
         android:layout_width="match_parent"
@@ -16,9 +16,9 @@
         android:layout_height="wrap_content"
         >
 
-    </timeparser.com.loginbuttons.GooglePlusButton>
+    </com.shaishavgandhi.loginbuttons.GooglePlusButton>
 
-    <timeparser.com.loginbuttons.FacebookButton
+    <com.shaishavgandhi.loginbuttons.FacebookButton
         android:id="@+id/facebook"
         android:layout_above="@+id/twitter"
         android:layout_width="match_parent"
@@ -28,9 +28,9 @@
         android:layout_height="wrap_content"
         >
 
-    </timeparser.com.loginbuttons.FacebookButton>
+    </com.shaishavgandhi.loginbuttons.FacebookButton>
 
-    <timeparser.com.loginbuttons.TwitterButton
+    <com.shaishavgandhi.loginbuttons.TwitterButton
         android:layout_width="match_parent"
         android:id="@+id/twitter"
         android:layout_above="@+id/linkedin"
@@ -42,9 +42,9 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp">
 
-    </timeparser.com.loginbuttons.TwitterButton>
+    </com.shaishavgandhi.loginbuttons.TwitterButton>
 
-    <timeparser.com.loginbuttons.LinkedInButton
+    <com.shaishavgandhi.loginbuttons.LinkedInButton
         android:id="@+id/linkedin"
         android:layout_width="match_parent"
         app:iconSize="30dp"
@@ -56,6 +56,6 @@
         android:layout_marginRight="0dp"
         android:layout_marginBottom="0dp">
 
-    </timeparser.com.loginbuttons.LinkedInButton>
+    </com.shaishavgandhi.loginbuttons.LinkedInButton>
 
 </RelativeLayout>

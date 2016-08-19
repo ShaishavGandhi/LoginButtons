@@ -174,9 +174,9 @@ public class MainActivity extends AppCompatActivity {
                 case 2:
                     return "Regular Button";
                 case 3:
-                    return "Regular Transparent";
-                case 4:
                     return "Rounded Transparent";
+                case 4:
+                    return "Regular Rounded";
                 case 5:
                     return "Circular";
                 case 6:

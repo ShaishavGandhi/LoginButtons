@@ -1,19 +1,24 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'com.shaishavgandhi.login-buttons' // Change this to match your package name
+version = '0.1.1'
 
 ext {
     bintrayRepo = 'maven'
     bintrayName = 'login-buttons'
 
-    publishedGroupId = 'com.shaishav.login-buttons'
+    publishedGroupId = 'com.shaishavgandhi'
     libraryName = 'login-buttons'
     artifact = 'login-buttons'
 
-    libraryDescription = 'UI Library for beautiful login buttons'
+    libraryDescription = 'UI Library for login buttons'
 
-    siteUrl = 'https://github.com/shaishavgandhi05/AndroidLoginButtons'
-    gitUrl = 'https://github.com/shaishavgandhi05/AndroidLoginButtons.git'
+    siteUrl = 'https://github.com/shaishavgandhi05/LoginButtons'
+    gitUrl = 'https://github.com/shaishavgandhi05/LoginButtons.git'
 
-    libraryVersion = '0.1.0'
+    libraryVersion = '0.1.1'
 
     developerId = 'shaishgandhi'
     developerName = 'Shaishav Gandhi'
@@ -21,17 +26,9 @@ ext {
 
     licenseName = 'MIT'
     licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ['MIT']
+    allLicenses = ["MIT"]
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
-    }
-}
 
 
 android {
@@ -60,6 +57,29 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
