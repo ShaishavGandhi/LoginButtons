@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidLoginButton.iml" filepath="$PROJECT_DIR$/AndroidLoginButton.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/login-buttons/library.iml" filepath="$PROJECT_DIR$/login-buttons/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/login-buttons/login-buttons.iml" filepath="$PROJECT_DIR$/login-buttons/login-buttons.iml" />
     </modules>
   </component>
 </project>
