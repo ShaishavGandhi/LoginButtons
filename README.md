@@ -1,6 +1,9 @@
 # LoginButtons
 
+[ ![Download](https://api.bintray.com/packages/shaishgandhi/maven/login-buttons/images/download.svg) ](https://bintray.com/shaishgandhi/maven/login-buttons/_latestVersion)
+
 A simple library for building beautiful login buttons
+
 
 ![Screenshot](https://github.com/shaishavgandhi05/LoginButtons/blob/master/screenshots/screenshot.png)
 
