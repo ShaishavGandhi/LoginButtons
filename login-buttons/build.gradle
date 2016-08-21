@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-group = 'com.shaishavgandhi.login-buttons' // Change this to match your package name
+group = 'com.shaishavgandhi.login-buttons'
 version = '0.1.1'
 
 ext {

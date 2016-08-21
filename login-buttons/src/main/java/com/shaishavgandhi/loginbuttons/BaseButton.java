@@ -73,6 +73,7 @@ public class BaseButton extends Button {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        // Recalculate width and amount to shift by, taking into account icon size
         int shift = (mIconSize + mIconPadding) / 2;
 
         canvas.save();
@@ -80,34 +81,31 @@ public class BaseButton extends Button {
 
         super.onDraw(canvas);
 
-        if (mIcon != null) {
-            float textWidth = getPaint().measureText((String)getText());
-            int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
-            int top = getHeight()/2 - mIconSize/2;
+        float textWidth = getPaint().measureText((String)getText());
+        int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
+        int top = getHeight()/2 - mIconSize/2;
 
-            if(!mIconCenterAligned)
-                left = 0;
+        if(!mIconCenterAligned)
+            left = 0;
 
-            Rect destRect = new Rect(left, top, left + mIconSize, top + mIconSize);
-            canvas.drawBitmap(mIcon, mSrcRect, destRect, mPaint);
-        }
+        Rect destRect = new Rect(left, top, left + mIconSize, top + mIconSize);
+        canvas.drawBitmap(mIcon, mSrcRect, destRect, mPaint);
 
         canvas.restore();
     }
 
     private void init(Context context, AttributeSet attrs, int logo) {
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.IconButton);
-        mIcon = Utils.drawableToBitmap(getResources().getDrawable(logo));
-        mIconSize = (int)Utils.convertDpToPixel(20,context);
-        mIconCenterAligned = true;
-        mRoundedCorner = false;
-        mTransparentBackground = false;
-        mRoundedCornerRadius = (int)Utils.convertDpToPixel(40,context);
 
+        // Initialize variables to default values
+        setDefaultValues(context,logo);
+
+        // Don't add padding when text isn't present
         if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
 
+        // Load the custom properties and assign values
         for (int i = 0; i < array.getIndexCount(); ++i) {
             int attr = array.getIndex(i);
             if(attr == R.styleable.IconButton_iconPadding){
@@ -132,10 +130,21 @@ public class BaseButton extends Button {
 
         array.recycle();
 
-        //If we didn't supply an icon in the XML
         if(mIcon != null){
             mPaint = new Paint();
             mSrcRect = new Rect(0, 0, mIcon.getWidth(), mIcon.getHeight());
         }
+
+    }
+
+    private void setDefaultValues(Context context,int logo){
+
+        mIcon = Utils.drawableToBitmap(getResources().getDrawable(logo));
+        mIconSize = (int)Utils.convertDpToPixel(20,context);
+        mIconCenterAligned = true;
+        mRoundedCorner = false;
+        mTransparentBackground = false;
+        mRoundedCornerRadius = (int)Utils.convertDpToPixel(40,context);
+
     }
 }
