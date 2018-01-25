@@ -81,7 +81,7 @@ public class BaseButton extends Button {
 
         super.onDraw(canvas);
 
-        float textWidth = getPaint().measureText((String)getText());
+        float textWidth = getPaint().measureText(getText().toString());
         int left = (int)((getWidth() / 2f) - (textWidth / 2f) - mIconSize - mIconPadding);
         int top = getHeight()/2 - mIconSize/2;
 
