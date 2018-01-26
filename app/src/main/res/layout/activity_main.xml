@@ -221,10 +221,5 @@
 
         </LinearLayout>
 
-        <com.shaishavgandhi.loginbuttons.GooglePlusSlantButton
-            android:layout_width="match_parent"
-            android:text="Sign in with Google"
-            android:background="@drawable/bg"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 </ScrollView>

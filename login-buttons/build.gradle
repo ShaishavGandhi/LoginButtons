@@ -3,7 +3,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
 group = 'com.shaishavgandhi.login-buttons'
-version = '0.1.1'
+version = '0.1.2'
 
 ext {
     bintrayRepo = 'maven'
@@ -18,7 +18,7 @@ ext {
     siteUrl = 'https://github.com/shaishavgandhi05/LoginButtons'
     gitUrl = 'https://github.com/shaishavgandhi05/LoginButtons.git'
 
-    libraryVersion = '0.1.1'
+    libraryVersion = '0.1.2'
 
     developerId = 'shaishgandhi'
     developerName = 'Shaishav Gandhi'
