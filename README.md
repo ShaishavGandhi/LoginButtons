@@ -11,7 +11,7 @@ A simple library for building beautiful login buttons
 
 Add this in your dependencies block
 ```groovy
-compile 'com.shaishavgandhi:login-buttons:0.1.1'
+compile 'com.shaishavgandhi:login-buttons:0.1.2'
 ```
 
 ## Basic Usage
