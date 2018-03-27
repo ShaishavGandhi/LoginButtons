@@ -20,6 +20,11 @@ public class BaseButton extends Button {
     private Paint mPaint;
     private Rect mSrcRect;
     private int mIconPadding;
+
+    protected int getmIconSize() {
+        return mIconSize;
+    }
+
     private int mIconSize;
     private int mRoundedCornerRadius;
     private boolean mIconCenterAligned;
