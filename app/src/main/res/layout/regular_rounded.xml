@@ -5,11 +5,12 @@
     android:padding="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.shaishavgandhi.loginbuttons.GooglePlusButton
+    <com.shaishavgandhi.loginbuttons.GoogleButton
         android:id="@+id/google"
         android:layout_above="@+id/facebook"
         android:layout_width="match_parent"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
         app:roundedCorner="true"
         app:iconCenterAligned="false"
         app:iconSize="30dp"
@@ -18,7 +19,7 @@
         android:layout_height="wrap_content"
         >
 
-    </com.shaishavgandhi.loginbuttons.GooglePlusButton>
+    </com.shaishavgandhi.loginbuttons.GoogleButton>
 
     <com.shaishavgandhi.loginbuttons.FacebookButton
         android:id="@+id/facebook"

@@ -5,7 +5,7 @@
     <item android:id="@+id/rect">
         <shape android:shape="rectangle">
 
-            <solid android:color="@color/google" />
+            <solid android:color="@color/google_plus" />
         </shape>
     </item>
 

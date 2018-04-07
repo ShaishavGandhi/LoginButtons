@@ -9,11 +9,11 @@ import android.util.AttributeSet;
 public class LinkedInButton extends BaseButton {
 
     public LinkedInButton(Context context, AttributeSet attrs) {
-        super(context,attrs,R.color.linkedin,R.drawable.linkedin_logo);
+        super(context, attrs, R.color.linkedin, android.R.color.white, R.drawable.linkedin_logo);
     }
 
     public LinkedInButton(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs,defStyle,R.color.linkedin,R.drawable.linkedin_logo);
+        super(context, attrs, defStyle, R.color.linkedin, android.R.color.white, R.drawable.linkedin_logo);
     }
 
     public LinkedInButton(Context context) {
