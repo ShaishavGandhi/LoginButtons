@@ -9,11 +9,11 @@ import android.util.AttributeSet;
 public class TwitterButton extends BaseButton {
 
     public TwitterButton(Context context, AttributeSet attrs) {
-        super(context, attrs, R.color.twitter, android.R.color.white, R.drawable.twitter_logo);
+        super(context, attrs, R.color.twitter, R.drawable.twitter_logo);
     }
 
     public TwitterButton(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle, R.color.twitter, android.R.color.white, R.drawable.twitter_logo);
+        super(context, attrs, defStyle, R.color.twitter, R.drawable.twitter_logo);
     }
 
     public TwitterButton(Context context) {

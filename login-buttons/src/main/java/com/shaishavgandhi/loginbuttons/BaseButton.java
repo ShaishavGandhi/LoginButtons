@@ -36,20 +36,20 @@ public class BaseButton extends AppCompatButton {
         super(context, attrs);
     }
 
-    public BaseButton(Context context, AttributeSet attrs, int defStyleAttr, int color, int textColor, int logo) {
+    public BaseButton(Context context, AttributeSet attrs, int defStyleAttr, int color, int logo) {
         super(context, attrs, defStyleAttr);
         init(context,attrs,logo);
-        setStyle(color, textColor, context);
+        setStyle(color, context);
     }
 
-    public BaseButton(Context context, AttributeSet attrs, int color, int textColor, int logo){
+    public BaseButton(Context context, AttributeSet attrs, int color, int logo){
         super(context,attrs);
         init(context, attrs,logo);
-        setStyle(color, textColor, context);
+        setStyle(color, context);
 
     }
 
-    private void setStyle(int color, int textColor, Context context){
+    private void setStyle(int color, Context context){
 
         setTextColor(this.textColor);
 
