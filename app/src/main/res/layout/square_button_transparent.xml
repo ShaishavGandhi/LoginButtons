@@ -8,7 +8,7 @@
     android:paddingBottom="10dp"
     >
 
-    <com.shaishavgandhi.loginbuttons.GooglePlusButton
+    <com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="75dp"
         android:id="@+id/google"
         app:transparentBackground="true"
@@ -19,7 +19,7 @@
         android:layout_height="75dp"
         >
 
-    </com.shaishavgandhi.loginbuttons.GooglePlusButton>
+    </com.shaishavgandhi.loginbuttons.GoogleButton>
 
     <com.shaishavgandhi.loginbuttons.FacebookButton
         android:layout_width="75dp"

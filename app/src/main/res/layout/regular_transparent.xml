@@ -6,7 +6,7 @@
     android:background="#3C3C3B"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.shaishavgandhi.loginbuttons.GooglePlusButton
+    <com.shaishavgandhi.loginbuttons.GoogleButton
         android:id="@+id/google"
         app:transparentBackground="true"
         android:layout_above="@+id/facebook"
@@ -15,12 +15,13 @@
         app:roundedCorner="true"
         app:iconCenterAligned="false"
         app:iconSize="30dp"
+        android:textColor="@android:color/white"
         android:layout_margin="5dp"
         android:text="Sign in with Google"
         android:layout_height="wrap_content"
         >
 
-    </com.shaishavgandhi.loginbuttons.GooglePlusButton>
+    </com.shaishavgandhi.loginbuttons.GoogleButton>
 
     <com.shaishavgandhi.loginbuttons.FacebookButton
         android:id="@+id/facebook"

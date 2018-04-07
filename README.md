@@ -18,7 +18,7 @@ compile 'com.shaishavgandhi:login-buttons:0.1.2'
 
 ### Google Plus Login Button
 ```xml
-<com.shaishavgandhi.loginbuttons.GooglePlusButton
+<com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="match_parent"
         android:textAlignment="center"
         app:iconSize="30dp"
@@ -74,7 +74,7 @@ The libary gives a fair amount of freedom and using several permutations and com
 
 A popular example are **circular buttons**, like FAB for login. Using the properties you can make a circular button like this : 
 ```xml
-<com.shaishavgandhi.loginbuttons.GooglePlusButton
+<com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="75dp"
         app:roundedCorner="true"
         app:iconSize="30dp"
@@ -87,7 +87,7 @@ In the above example, enabling roundedCorner and setting the width, height and r
 Another example is of **rounded corner** buttons :
 
 ```xml
-<com.shaishavgandhi.loginbuttons.GooglePlusButton
+<com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="match_parent"
         android:textAlignment="center"
         app:roundedCorner="true"
@@ -104,7 +104,7 @@ Above code uses various properties to get a rounded corner button, with icon on 
 ### [Square Buttons](https://github.com/shaishavgandhi05/LoginButtons/blob/master/screenshots/square_button.png)
   
   ```xml
-  <com.shaishavgandhi.loginbuttons.GooglePlusButton
+  <com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="75dp"
         app:iconSize="30dp"
         android:layout_height="75dp"
@@ -113,7 +113,7 @@ Above code uses various properties to get a rounded corner button, with icon on 
   
 ### [Square Transparent Buttons](https://github.com/shaishavgandhi05/LoginButtons/blob/master/screenshots/square_transparent.png)
   ```xml
-  <com.shaishavgandhi.loginbuttons.GooglePlusButton
+  <com.shaishavgandhi.loginbuttons.GoogleButton
         android:layout_width="75dp"
         app:transparentBackground="true"
         app:iconSize="30dp"

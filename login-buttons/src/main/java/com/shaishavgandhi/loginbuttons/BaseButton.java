@@ -8,17 +8,19 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.GradientDrawable;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.widget.Button;
 
 /**
  * Created by Shaishav on 8/16/2016.
  */
-public class BaseButton extends Button {
+public class BaseButton extends AppCompatButton {
 
     private Bitmap mIcon;
     private Paint mPaint;
     private Rect mSrcRect;
+    private int textColor = Color.WHITE;
     private int mIconPadding;
     private int mIconSize;
     private int mRoundedCornerRadius;
@@ -34,22 +36,22 @@ public class BaseButton extends Button {
         super(context, attrs);
     }
 
-    public BaseButton(Context context, AttributeSet attrs, int defStyleAttr,int color,int logo) {
+    public BaseButton(Context context, AttributeSet attrs, int defStyleAttr, int color, int logo) {
         super(context, attrs, defStyleAttr);
         init(context,attrs,logo);
-        setStyle(color,context);
+        setStyle(color, context);
     }
 
     public BaseButton(Context context, AttributeSet attrs, int color, int logo){
         super(context,attrs);
         init(context, attrs,logo);
-        setStyle(color,context);
+        setStyle(color, context);
 
     }
 
     private void setStyle(int color, Context context){
 
-        setTextColor(Color.WHITE);
+        setTextColor(this.textColor);
 
         setBackgroundResource(R.drawable.round_corner);
         GradientDrawable drawable = (GradientDrawable)getBackground().mutate();
@@ -101,9 +103,11 @@ public class BaseButton extends Button {
         setDefaultValues(context,logo);
 
         // Don't add padding when text isn't present
-        if(attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
+        if (attrs.getAttributeValue("http://schemas.android.com/apk/res/android","text")!=null){
             mIconPadding = (int)Utils.convertDpToPixel(20,context);
         }
+
+        textColor = array.getColor(R.styleable.IconButton_android_textColor, Color.WHITE);
 
         // Load the custom properties and assign values
         for (int i = 0; i < array.getIndexCount(); ++i) {
