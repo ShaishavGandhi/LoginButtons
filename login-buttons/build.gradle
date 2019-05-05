@@ -1,35 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
-
-group = 'com.shaishavgandhi.login-buttons'
-version = '1.0.0'
-
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'login-buttons'
-
-    publishedGroupId = 'com.shaishavgandhi'
-    libraryName = 'login-buttons'
-    artifact = 'login-buttons'
-
-    libraryDescription = 'UI Library for login buttons'
-
-    siteUrl = 'https://github.com/shaishavgandhi05/LoginButtons'
-    gitUrl = 'https://github.com/shaishavgandhi05/LoginButtons.git'
-
-    libraryVersion = '1.0.0'
-
-    developerId = 'shaishgandhi'
-    developerName = 'Shaishav Gandhi'
-    developerEmail = 'shaishgandhi@gmail.com'
-
-    licenseName = 'MIT'
-    licenseUrl = 'https://opensource.org/licenses/MIT'
-    allLicenses = ["MIT"]
-}
-
-
+apply plugin: 'com.vanniktech.maven.publish'
 
 android {
     compileSdkVersion 28
@@ -79,6 +49,3 @@ artifacts {
     archives generateJavadocsJar
     archives generateSourcesJar
 }
-
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
